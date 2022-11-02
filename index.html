@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+</head>
+
+<body>
+  <main class="content">
+    <section class="user">
+      <div class="user__info">
+        <div class="user__info-container">
+          <img src="./images/image-jeremy.png" alt="user photo" />
+
+          <div class="user__info-username">
+            <span>Report for</span>
+            <h1>Jeremy Robson</h1>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="user__dates" data-js="user-dates">
+        <span data-js="daily">Daily</span>
+        <span class="selected"  data-js="weekly">Weekly</span>
+        <span data-js="monthly">Monthly</span>
+      </div>
+    </section>
+
+    <section class="data" data-js="cards">
+      <div class="card work">
+        <div class="card__content">
+          <h2 class="card__title">
+            <span>Work</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="work" class="card__info">
+            <span class="card__info-hours">32hrs</span>
+            <span class="card__info-previous-hours">Last week - 36hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card play">
+        <div class="card__content">
+
+          <h2 class="card__title">
+            <span>Play</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="play" class="card__info">
+            <span class="card__info-hours">10hrs</span>
+            <span class="card__info-previous-hours">Last week - 8hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card study">
+        <div class="card__content">
+          <h2 class="card__title">
+            <span>Study</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="study" class="card__info">
+            <span class="card__info-hours">4hrs</span>
+            <span class="card__info-previous-hours">Last week - 7hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card exercise">
+        <div class="card__content">
+          <h2 class="card__title">
+            <span>Exercise</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="exercise" class="card__info">
+            <span class="card__info-hours">4hrs</span>
+            <span class="card__info-previous-hours">Last week - 5hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card social">
+        <div class="card__content">
+          <h2 class="card__title">
+            <span>Social</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="social" class="card__info">
+            <span class="card__info-hours">5hrs</span>
+            <span class="card__info-previous-hours">Last week - 10hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card self-care">
+        <div class="card__content">
+          <h2 class="card__title">
+            <span>Self Care</span>
+            <svg data-js="options" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill="#BBC0FF" fill-rule="evenodd" />
+            </svg>
+          </h2>
+
+          <div data-frames="self-care" class="card__info">
+            <span class="card__info-hours">2hrs</span>
+            <span class="card__info-previous-hours">Last week - 2hrs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

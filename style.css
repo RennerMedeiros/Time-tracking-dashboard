@@ -1,0 +1,356 @@
+:root {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%); /* (work) */
+  --soft-blue: hsl(195, 74%, 62%); /* (play) */
+  --light-red-study: hsl(348, 100%, 68%); /* (study) */
+  --lime-green: hsl(145, 58%, 55%); /* (exercise) */
+  --violet: hsl(264, 64%, 52%); /* (social) */
+  --soft-orange : hsl(43, 84%, 65%); /* (self care) */
+
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%); 
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+  color: #fff;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 5rem;
+  color: var(--desaturated-blue);
+  font-size: 2rem;
+  
+}
+
+.options-hover:hover{
+  background-color: var(--dark-blue) !important;
+}
+
+.selected {
+  color: #fff !important;
+}
+
+.content {
+  display: flex;
+}
+
+.user {
+  background-color: var(--dark-blue);
+  border-radius: 0.833rem;
+  width: 14.166rem;
+}
+
+.user__info {
+  background-color: var(--blue);
+  padding: 2rem 0 4.555rem 1.611rem;
+  border-radius: 0.833rem;
+}
+
+.user__info-container {
+  display: flex;
+  height: 12.833rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user__info img {
+  width: 4.333rem;
+  height: 4.333rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.user__info-username{
+  margin-left: 0.222rem;
+}
+
+.user__info-username h1{
+  font-size: 2.222rem;
+  font-weight: 300;
+  line-height: 2.222rem;
+  width: 6ch;
+}
+
+.user__info-username span {
+  display: block;
+  font-size: 0.833rem;
+  color: var(--pale-blue);
+  font-weight: 400;
+  line-height: 1ch;
+  margin-bottom: 0.555rem;
+}
+
+.user__dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1.833rem 0  1.666rem 2.111rem;
+  height: 5.388rem;
+}
+
+.user__dates span {
+  line-height: 2ch;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--desaturated-blue);
+  transition: .5s ease;
+}
+
+.user__dates span:not(.selected):hover{
+  color: #fff;
+  margin-left: 5px;
+}
+
+.data {
+  position: relative;
+  margin-left: 1.666rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.666rem;
+}
+/*==========================================================================*/
+.card {
+  position: relative;
+  height: 13.555rem;
+  width: 14.166rem;
+  border-radius: 0.833rem;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -0.555rem;
+  right: 0.944rem;
+  width: 4.444rem;
+  height: 4.444rem;
+  background-repeat: no-repeat;
+}
+
+.card__content {
+  position: absolute;
+  bottom: 0;
+  height: 11.055rem;
+  width: 100%;
+  background-color: var(--dark-blue);
+  border-radius: 0.833rem;
+  z-index: 1;
+  transition: .5s ease;
+}
+
+.card__content svg {
+  cursor: pointer;
+}
+
+.card__content:hover {
+  background-color: #333879;
+}
+
+.card__content > *{
+  margin-left: 1.666rem;
+  width: 10.777rem;
+}
+
+.card__title {
+  line-height: 1ch;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.888rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title svg:hover path{
+  fill: #fff;
+}
+
+.card__info {
+  line-height: 1ch;
+  margin-top: 2.222rem;
+  display: flex;
+  flex-direction: column;
+  height: 4.222rem;
+  justify-content: space-between;
+}
+
+.card__info-hours {
+  font-size: 3.111rem;
+  font-weight: 300;
+  line-height: 1.3ch;
+}
+
+.card__info-previous-hours{
+  font-size: 0.833rem;
+  color: #bbc0ff;
+  font-weight: 400;
+}
+
+.work {
+  background: linear-gradient(var(--light-red-work) 80%, var(--dark-blue) 20%);
+}
+
+.work.card::before {
+  background-image: url(./images/icon-work.svg);
+} 
+
+.play {
+  background: linear-gradient(var(--soft-blue) 80%, var(--dark-blue) 20%);
+}
+
+.play.card::before {
+  background-image: url(./images/icon-play.svg);
+} 
+
+.study {
+  background: linear-gradient(var(--light-red-study) 80%, var(--dark-blue) 20%);
+}
+
+.study.card::before {
+  background-image: url(./images/icon-study.svg);
+} 
+
+.exercise {
+  background: linear-gradient(var(--lime-green) 80%, var(--dark-blue) 20%); 
+}
+
+.exercise.card::before {
+  background-image: url(./images/icon-exercise.svg);
+  top: 0;
+} 
+
+.social {
+  background: linear-gradient(var(--violet) 80%, var(--dark-blue) 20%);
+}
+
+.social.card::before {
+  background-image: url(./images/icon-social.svg);
+  top: 0;
+} 
+
+.self-care{
+  background: linear-gradient(var(--soft-orange) 80%, var(--dark-blue) 20%);
+}
+
+.self-care.card::before {
+  background-image: url(./images/icon-self-care.svg);
+} 
+
+@media only screen and (min-width: 800px) and (max-width: 1150px) {
+  .content {
+    transform: scale(.7);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    width: 90%;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 1.722rem;
+  }
+
+  .content > * {
+    width: 100%;
+  }
+
+  .user__info {
+    height: 133px;
+    padding: 1.77rem 0 0 1.611rem;
+  }
+
+  .user__info-container {
+    flex-direction: row;
+    justify-content: left;
+    height: auto;
+    align-items: center;
+  }
+
+  .user__info-container img {
+    width: 3.555rem;
+    height: 3.555rem;
+  }
+
+  .user__info-username {
+      margin-left: 1rem;
+  }
+
+  .user__info-container h1 {
+    font-size: 1.333rem;
+    line-height: 1ch;
+    width: 15ch;
+  }
+
+  .user__dates {
+    flex-direction: row;
+    height: auto;
+    margin: 1.66rem auto ;
+    width: 80%;
+  }
+
+  .user__dates span:not(.selected):hover{
+    margin-left: 0;
+  }
+
+  .data {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    gap: 1.333rem;
+    margin: 1.333rem 0 2.777rem 0;
+  }
+
+  .data > * {
+    width: 100%;
+  }
+
+  .card {
+    height: 8.888rem;
+  }
+
+  .card__content {
+    height: 6.777rem;
+  }
+
+  .card__content > * {
+    width: 85%;
+    margin: 0 auto;
+    line-height: 1ch;
+    height: auto;
+  }
+
+  .card__title {
+    margin-top: 1.888rem;
+  }
+
+  .card__info {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.888rem;
+    margin-bottom: 1.777rem;
+  }
+
+  .card__info-hours{
+    line-height: 1ch;
+    font-size: 1.777rem;
+  }
+}
